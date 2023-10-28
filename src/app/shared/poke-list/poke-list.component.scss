@@ -1,0 +1,136 @@
+@import '../../../config-scss/rem-calc.scss';
+
+$padding: rem-calc(20);
+
+:host {
+    .listagem {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    
+        padding: $padding 0;
+    
+        .pokemon {
+            position: relative;
+            display: flex;
+            background: var(--branco);
+    
+            width: calc(49% - 2.5rem);   // calcl(49% - 40px) usamos um calculo para tirar 40px a largura, mas para nao ficar em pixeis vamos ao site pixels to rem e conevrtemos e usamos em rem
+            height: rem-calc(157 - 40);  // retiramos 40 aos 157 e convertemos para rem (isto sao ajustes que esta a ser dados apos verificar q nao esta la muito bem as medidas) 
+            
+            margin-bottom: rem-calc(10);
+            padding: $padding;
+    
+            border-radius: rem-calc(10);
+    
+            text-decoration: none;
+            color: var(--primary-color);
+    
+            &__status{              // vai atribuir a class pokemon__status  (adiciona a class pokemon a __status)
+                h2 {
+                    font-size: rem-calc(22);
+                    font-style: italic;
+                    font-weight: 700;   //bold
+                    text-transform: capitalize;
+    
+                    margin-bottom: rem-calc(10);
+                }
+    
+                ul {
+                    display: flex;
+                    flex-direction: column;
+    
+                    li {
+                        background:  var(--cinza);
+                        font-size: rem-calc(10);
+    
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        
+                        border-radius: rem-calc(50);
+                        
+                        width: rem-calc(60);
+                        margin-bottom: rem-calc(5);
+                    }
+                }
+            }
+    
+            &__image {
+                position: absolute;
+    
+                display: flex;
+                align-items: center;
+                justify-content: center;
+    
+                height: rem-calc(90);
+                width: rem-calc(110);
+    
+                right: $padding;
+                bottom: $padding;
+    
+                //background: url('../../../assets/bg/background-list-pokemon.svg') no-repeat;
+    
+                img {
+                    width: rem-calc(80);
+                }
+            }
+    
+        }
+    
+        .normal {
+            background-color: #A8A77A;
+        }
+        .fire {
+            background-color: #EE8130;
+        }
+        .water {
+            background-color: #6390F0;
+        }
+        .electric {
+            background-color: #F7D02C;
+        }
+        .grass{
+            background-color: #7AC74C;
+        }
+        .ice{
+            background-color: #96D9D6;
+        } 
+        .fighting{
+            background-color: #C22E28;
+        }
+        .poison{
+            background-color: #A33EA1;
+        }
+        .ground{
+            background-color: #E2BF65;
+        }
+        .flying{
+            background-color: #A98FF3;
+        }
+        .psychic{
+            background-color: #F95587;
+        }
+        .bug{
+            background-color: #A6B91A;
+        }
+        .rock{
+            background-color: #B6A136;
+        }
+        .ghost{
+            background-color: #735797;
+        }
+        .dragon{
+            background-color: #6F35FC;
+        }
+        .dark{
+            background-color: #705746;
+        }
+        .steel{
+            background-color: #B7B7CE;
+        }
+        .fairy{
+            background-color:#D685AD;
+        }
+    }
+}

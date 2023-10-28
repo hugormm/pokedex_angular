@@ -1,0 +1,10 @@
+@import '../../../config-scss/rem-calc.scss';    //importamos a funcao do rem
+
+:host{    // so modifica este elemento neste componente
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: rem-calc(40) 0;   
+    }
+}

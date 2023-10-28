@@ -1,0 +1,36 @@
+<!-- Search -->
+<poke-search (emitSearch)="getSearch($event)"></poke-search>     <!-- colocamos aqui o serach para ser mais facil enviar valores e alertamos que temos o emit para ser resgatado, e e feito com o $event-->
+
+<section class="listagem">
+    <ng-template ngFor let-pokemon [ngForOf]="getAllPokemons">    <!-- estamos a fazer um for Of no template -->
+        <a 
+            [routerLink]="['details', pokemon.status.id]"
+            [ngClass]="'pokemon ' +pokemon.status.types[0].type.name" 
+            *ngIf="pokemon.status"
+        >
+            <section class="pokemon__status">
+                <h2>
+                    {{pokemon.name}} {{ pokemon.status.id }}
+                </h2>
+            
+                <ul>
+                    <li *ngFor="let value of pokemon?.status?.types">   <!-- da erro pq a segunda req ainda nao foi carregada e ele nao encontra os tipos-->
+                        {{ value.type.name }}                           <!-- para prevenir colocamos o ? no pokemon, ele vai verificando se existe-->
+                    </li>                                               <!-- tb resolvemos isso com o ngIf="pokemon.status" em cima (deixei as duas formas aqui)-->
+                </ul>
+            </section>
+    
+            <section class="pokemon__image">
+                <img 
+                    [src]="pokemon.status.sprites.other.home.front_default" 
+                    [alt]="pokemon.name"
+                >
+            </section>
+        </a>
+    </ng-template>
+
+    <img *ngIf="apiError" src="assets/erro.png" alt="Erro na pokedex" width="100%">
+</section>
+
+
+

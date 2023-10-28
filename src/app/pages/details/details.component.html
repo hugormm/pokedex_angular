@@ -1,0 +1,41 @@
+<!-- Header -->
+<poke-header></poke-header>
+
+<main>
+    <ng-template [ngIf]="isLoading">   <!-- so mostra as informacoes quando fica tru, depois de carregadas, para evitar erros n console. -->
+        <section class="pokemon__names">
+            <h1 class="slideInLeft">{{ pokemon[0].name }}</h1>
+            <h2 class="slideInRight">{{ pokemon[1].names[0].name }}</h2>
+        </section>
+
+        <section class="pokemon__status">
+            <img   
+                [src]="pokemon[0].sprites.other.home.front_default" 
+                [alt]="pokemon[0].name"
+                class="slideInDown"
+            >
+
+            <article class="pokemon__status__statistics fadeIn">
+                <section>
+                    <h3>Estatisticas</h3>
+
+                    <ol>
+                        <li *ngFor="let value of pokemon[0].stats">
+                            {{ value.stat.name }}
+            
+                        <strong>
+                            {{ value.base_stat }}
+                        </strong>
+                        </li>
+                    </ol>
+                </section>
+
+                <a [routerLink]="['']" class="btn btn__secondary">
+                    Voltar
+                </a>
+            </article>
+        </section>
+    </ng-template>
+
+    <img *ngIf="apiError" src="assets/erro.png" alt="Erro na pokedex" width="100%">
+</main>
