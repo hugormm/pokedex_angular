@@ -6,6 +6,8 @@ $padding: rem-calc(20);
     .listagem {
         display: flex;
         justify-content: space-between;
+        justify-content: center;
+        gap: rem-calc(20);
         flex-wrap: wrap;
     
         padding: $padding 0;
@@ -15,7 +17,7 @@ $padding: rem-calc(20);
             display: flex;
             background: var(--branco);
     
-            width: calc(49% - 2.5rem);   
+            width: rem-calc(250) ;   
             height: rem-calc(157 - 40);  
             
             margin-bottom: rem-calc(10);
