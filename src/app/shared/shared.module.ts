@@ -14,13 +14,13 @@ import { RouterModule } from '@angular/router';
     PokeListComponent
   ],
   exports: [
-    PokeHeaderComponent,   //exportamos para ser utilizado em outros sitios
+    PokeHeaderComponent,   
     PokeSearchComponent,
     PokeListComponent
   ],
   imports: [
     CommonModule,
-    RouterModule  // importamos para o router link funcuionar nos componentes
+    RouterModule 
   ]
 })
 export class SharedModule { }

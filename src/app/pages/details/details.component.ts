@@ -14,13 +14,13 @@ export class DetailsComponent implements OnInit {
   private urlName: string = 'https://pokeapi.co/api/v2/pokemon-species'
 
   public pokemon: any
-  public isLoading: boolean = false   // criamos esta variavel para defenir se esta carregando (para limpar erros do console)
-  public apiError: boolean = false    // boolean para a imagem de erro
+  public isLoading: boolean = false   
+  public apiError: boolean = false    
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private pokeApiService: PokeApiService
-  ) {   // adicionamos dependencia d activedRouter para buscar o id que la contem
+  ) {  
 
   }
 
@@ -28,15 +28,15 @@ export class DetailsComponent implements OnInit {
     this.getPokemon()
   }
   public getPokemon() {
-    const id = this.activatedRoute.snapshot.params['id']  // recuperamos o id
+    const id = this.activatedRoute.snapshot.params['id']  
     const pokemon = this.pokeApiService.apiGetPokemons(`${this.urlPokemon}/${id}`)
     const name = this.pokeApiService.apiGetPokemons(`${this.urlName}/${id}`)
 
-    return forkJoin([pokemon, name]).subscribe({ // faz ao mesmo tempo as requisicoes economizando codigo e subscribe
+    return forkJoin([pokemon, name]).subscribe({ 
       
         next: (res) => {
           this.pokemon = res
-          this.isLoading = true    // mostra a tela quando tiver carregado
+          this.isLoading = true    
         },
         error: (error) => {
           this.apiError = true

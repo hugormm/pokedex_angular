@@ -1,4 +1,4 @@
-@import './config-scss/variables.scss';    // importamos os script scss que crimaos
+@import './config-scss/variables.scss';    
 @import './config-scss/reset.scss';
 @import './config-scss/rem-calc.scss';
 @import './config-scss/btn.scss';
@@ -6,11 +6,11 @@
 
 html {
     font-family: 'roboto', sans-serif;
-    background: var(--primary-color);   // usamos a variavel para defenir a cor
+    background: var(--primary-color);   
 }
 
 main {
-    width: rem-calc(600);   // converte 600px para rem
+    width: rem-calc(600);   
     margin: 0 auto;
     box-sizing: border-box;
 }

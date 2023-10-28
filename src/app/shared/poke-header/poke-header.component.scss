@@ -1,6 +1,6 @@
-@import '../../../config-scss/rem-calc.scss';    //importamos a funcao do rem
+@import '../../../config-scss/rem-calc.scss';  
 
-:host{    // so modifica este elemento neste componente
+:host{    
     header {
         display: flex;
         justify-content: center;

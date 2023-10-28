@@ -9,6 +9,6 @@ export class PokeSearchComponent {
   @Output() public emitSearch: EventEmitter<string> = new EventEmitter();
 
   public search(value: string) {
-    this.emitSearch.emit(value)    // emitimos o q escrevemos n search
+    this.emitSearch.emit(value)   
   }
 }

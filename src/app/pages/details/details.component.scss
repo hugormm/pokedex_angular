@@ -30,7 +30,6 @@
 
 			h1,
 			h2 {
-				//Remove Bug Animation
 				-webkit-animation-fill-mode: none !important;
 				animation-fill-mode: none !important;
 			}
@@ -46,7 +45,7 @@
 				max-width: rem-calc(130);
 				z-index: 10;
 
-				//Remove Bug Animation
+
 				-webkit-animation-fill-mode: none !important;
 				animation-fill-mode: none !important;
 			}

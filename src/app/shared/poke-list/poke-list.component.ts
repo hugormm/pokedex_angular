@@ -10,29 +10,29 @@ export class PokeListComponent implements OnInit{
   private setAllPokemons: any
   public getAllPokemons: any
   
-  public apiError: boolean = false    // boolean para a imagem de erro
+  public apiError: boolean = false    
 
   constructor(
-    private pokeApiService: PokeApiService   // injetamos o service 
+    private pokeApiService: PokeApiService   
   ) {
 
   }
 
   ngOnInit(): void {
-    this.pokeApiService.apiListAllPokemons.subscribe({     // chanmamos o sevrice e executamos o metodo 
+    this.pokeApiService.apiListAllPokemons.subscribe({     
       next: (res) => {
         this.setAllPokemons = res.results
-        this.getAllPokemons = this.setAllPokemons   // fizemos esta refatoracao pra corrigir o bug de apagar o search e noa mudar a lista
+        this.getAllPokemons = this.setAllPokemons   
       },
       error: (error) => {
         this.apiError = true
-      }                                              // desta forma em baixo conseguimos actualizar a lista ao apagar no input (estamos a resetar a lista ao iniciar o metodo)
+      }                                              
     } )
   }
 
   public getSearch(value: string) {
     const filter = this.setAllPokemons.filter( (res: any) => {
-      return !res.name.indexOf(value.toLowerCase())              // vai verificar as primeiras letras do nome
+      return !res.name.indexOf(value.toLowerCase())              
     })
 
     this.getAllPokemons = filter

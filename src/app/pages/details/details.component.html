@@ -2,7 +2,7 @@
 <poke-header></poke-header>
 
 <main>
-    <ng-template [ngIf]="isLoading">   <!-- so mostra as informacoes quando fica tru, depois de carregadas, para evitar erros n console. -->
+    <ng-template [ngIf]="isLoading">  
         <section class="pokemon__names">
             <h1 class="slideInLeft">{{ pokemon[0].name }}</h1>
             <h2 class="slideInRight">{{ pokemon[1].names[0].name }}</h2>
